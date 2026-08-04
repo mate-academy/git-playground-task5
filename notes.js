@@ -47,7 +47,7 @@ function main() {
     }
     default:
       console.log("Commands: add <text> | list | search <term> | delete <id>");
-      console.log(`(Session locks after ${config.SESSION_TIMEOUT_MINUTES} minutes of inactivity.)`);
+      console.log(`(Session locks after ${config.SESSION_TIMEOUT_MINUTES} minutes of inactivity, or after ${config.MAX_SESSION_MINUTES} minutes regardless of activity.)`);
   }
 }
 
