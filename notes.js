@@ -13,7 +13,8 @@ function main() {
         return;
       }
       const note = store.add(text);
-      console.log(`Added note #${note.id}: ${note.text}`);
+      const total = store.all().length;
+      console.log(`Saved note #${note.id}: "${note.text}" — ${total} note${total === 1 ? "" : "s"} total`);
       break;
     }
     case "list": {
