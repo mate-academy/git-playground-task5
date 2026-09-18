@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+﻿#!/usr/bin/env node
 const store = require("./lib/store");
 const config = require("./lib/config");
 
@@ -52,3 +52,8 @@ function main() {
 }
 
 main();
+
+// Feature B modification
+
+
+// Feature A modification
