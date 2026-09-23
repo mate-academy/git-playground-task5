@@ -24,3 +24,12 @@ Goal: merge two branches that touched the same line, and have Claude resolve the
 4. **Review the result.** Does the merged line keep *both* changes — what `feature-a` did and what `feature-b` did — or did one side get dropped? A merge can build and run fine and still have quietly thrown away half the work.
 5. **Commit the merge and push `feature-a`.**
 6. **Open a pull request (against the main repository, not your fork,) from `feature-a` into `main`.** Ask Claude: *"Open a pull request for `feature-a` into `main`."* Then submit the pull request link.
+
+### Merge conflict resolution evidence
+The conflict in `notes.js` was on the `add` command's confirmation message. Merge commit `58cd71a` combined both branches:
+
+- **feature-a:** ``console.log(`Added note #${note.id}: ${note.text} — ${store.all().length} notes total`);`` (adds the running total)
+- **feature-b:** ``console.log(`Saved note #${note.id}: "${note.text}"`);`` (says "Saved" and quotes the note text)
+- **Resolved:** ``console.log(`Saved note #${note.id}: "${note.text}" — ${store.all().length} notes total`);`` (keeps both changes)
+
+This PR demonstrates the completed feature-a + feature-b merge workflow required by the lesson.
